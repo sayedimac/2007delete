@@ -13,7 +13,9 @@ flowchart TD
     Entry[Top-level statements in Program.cs] --> Greeting[Write greeting]
     Greeting --> Collection[Create List of Animal]
     Collection --> Samples[Add seven sample animals]
-    Samples --> Exit[Process exits]
+    Samples --> Render[Write summary lines]
+    Render --> Behave[Call Eat and Sleep]
+    Behave --> Exit[Process exits]
     Animal[Animal class] --> Properties[Name, age, and species]
     Animal --> Behaviors[Eat and Sleep methods]
     Samples -. creates .-> Animal
@@ -23,7 +25,7 @@ flowchart TD
 
 `Program.cs` uses C# top-level statements instead of an explicit `Program.Main` method. These statements print a greeting and populate a local animal collection.
 
-The collection is not enumerated, returned, or passed to another component, so it becomes eligible for cleanup when the process exits.
+The collection is enumerated immediately after creation so each sample animal can be displayed and asked to perform its simple behaviors before the process exits.
 
 ### Domain model
 
@@ -48,7 +50,7 @@ There are no package references, project references, custom build targets, or ru
 - Negative values and unrealistic values are valid for `Age` because there is no validation.
 - Duplicate animals are allowed in the list.
 - Behavior methods produce console side effects and do not return values.
-- The sample collection has no observable effect on program output.
+- The sample collection now produces observable console output for each animal.
 
 ## Potential next steps
 
