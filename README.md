@@ -9,9 +9,10 @@ When the application starts, it:
 1. Writes `Hello, World!` to the console.
 2. Creates an in-memory `List<Animal>`.
 3. Adds seven hard-coded animals to the list.
-4. Exits without displaying or otherwise processing the animals.
+4. Writes a summary line for each animal.
+5. Calls `Eat()` and `Sleep()` for each animal.
 
-The `Eat()` and `Sleep()` methods are implemented but are not called by the current program. The expected console output is therefore:
+The expected console output begins with:
 
 ```text
 Hello, World!

@@ -13,6 +13,14 @@ animals.Add(new Animal { AnimalName = "Daisy", Age = 1, Species = "Rabbit" });
 animals.Add(new Animal { AnimalName = "Max", Age = 6, Species = "Horse" });
 animals.Add(new Animal { AnimalName = "Luna", Age = 2, Species = "Cat" });
 
+// Show the animals that were created and demonstrate their behaviors.
+foreach (Animal animal in animals)
+{
+    Console.WriteLine($"{animal.AnimalName} is a {animal.Age}-year-old {animal.Species}.");
+    animal.Eat();
+    animal.Sleep();
+}
+
 // Define the data and behaviors shared by every animal.
 public class Animal
 {
